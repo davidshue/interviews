@@ -33,7 +33,8 @@ class ListTopper {
 	private int refreshLookupMap(KeyCount keyCount, int num) {
 		if (!keyCount) {
 			keyCount[num] = 1
-			keyCount.setTotal(keyCount.getTotal() + 1)
+			println keyCount.total
+			keyCount.total++
 			return num
 		}
 

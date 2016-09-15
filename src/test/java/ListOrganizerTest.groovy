@@ -1,4 +1,4 @@
-package sysdig
+
 
 import org.junit.Test
 
@@ -19,6 +19,8 @@ class ListOrganizerTest {
 		List<Integer> expected = [1, 9, 8, 4, 2, 7, 6, 0, 0, 0, 0]
 
 		List<Integer> output = lo.organize(input)
+
+		println output
 
 		assertEquals expected, output
 	}

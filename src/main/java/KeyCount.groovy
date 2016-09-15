@@ -5,5 +5,5 @@ class KeyCount {
 	@Delegate
 	private Map<Integer, Integer> map = new TreeMap<>()
 
-	int total
+	int total = 0
 }

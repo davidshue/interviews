@@ -24,12 +24,11 @@ class ListTopperTest {
 
 	@Test
 	void testTreeMap() {
-		Map<Integer, Integer> treeMap = new TreeMap<>()
-
 		Random rand = new Random()
 
-		(5..1).each {
-			treeMap[it] = rand.nextInt(10)
+		TreeMap<Integer, Integer> treeMap = (5..1).inject(new TreeMap<Integer, Integer>()) {map, it ->
+			map[it] = rand.nextInt(10)
+			map
 		}
 
 		println treeMap

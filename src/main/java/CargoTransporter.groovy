@@ -1,6 +1,13 @@
-package cargo
+
 
 /**
+ * This solves the problem of transporting a wolf, a goat, and a cabbage. You can only transport one
+ * across the river at a time, if left alone with the presence of the farmer, the wolf will eat the
+ * the goat, the goat will eat the cabbage. BTW, the goat will not eat the cabbage.
+ *
+ * This program will print out the list of tuples (to, back) that will successfully transport the
+ * cargoes securely.
+ *
  * Created by dshue1 on 8/5/16.
  */
 class CargoTransporter {
