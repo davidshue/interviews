@@ -1,5 +1,8 @@
 package contact;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 /**
  * Created by dshue1 on 9/19/16.
  */
@@ -35,15 +38,23 @@ public class Contact {
 
 	@Override
 	public int hashCode() {
-		return this.firstname.hashCode() * 10000 + this.lastname.hashCode();
+		return new HashCodeBuilder(17, 37)
+			.append(firstname)
+			.append(lastname)
+			.toHashCode();
 	}
 
 	@Override
-	public boolean equals(Object contact) {
-		if (contact == null) return false;
-		if (! (contact instanceof Contact)) return false;
-		Contact object = (Contact) contact;
-		return object.getFirstname().equals(this.getFirstname())
-			&& object.getLastname().equals(this.getLastname());
+	public boolean equals(Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		Contact contact = (Contact) obj;
+		return new EqualsBuilder()
+			.append(firstname, contact.firstname)
+			.append(lastname, contact.lastname)
+			.isEquals();
 	}
 }

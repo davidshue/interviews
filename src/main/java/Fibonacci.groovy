@@ -7,15 +7,8 @@ class Fibonacci {
 	long fastFibo(long n) {
 		long start =System.currentTimeMillis()
 
-		def fibo = (1..n).inject([1L, 1L, 0L]) {interim, it ->
-			if (it <= 2)
-				interim[2] = 1
-			else {
-				interim[2] = interim[0] + interim[1]
-				interim[0] = interim[1]
-				interim[1] = interim[2]
-			}
-			interim
+		def fibo = (1..n).inject(new Tuple2(0L, 1L)) {Tuple2 tuple, it ->
+			new Tuple2(tuple.second, tuple.first + tuple.second)
 		}
 		long end = System.currentTimeMillis()
 
