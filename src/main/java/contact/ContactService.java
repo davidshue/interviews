@@ -30,9 +30,7 @@ public class ContactService {
 
 	public Collection<Contact> search( String searchInput ) {
 		List<String> names = Arrays.asList(searchInput.split(" "));
-		return contacts.stream().filter((contact) -> {
-			return match(names, contact);
-		}).collect(Collectors.toList());
+		return contacts.stream().filter((contact) -> match(names, contact)).collect(Collectors.toList());
 	}
 
 	private boolean match(List<String> names, Contact contact) {

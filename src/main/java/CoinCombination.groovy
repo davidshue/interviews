@@ -3,7 +3,7 @@
  */
 class CoinCombination {
 	List<Map<Coin, Integer>> combinations(int cents) {
-		Coin.values().inject([]) {result, coin ->
+		Coin.upToMax(cents).inject([]) {result, coin ->
 			if (cents >= coin.value) {
 				Map<Coin, Integer> seed = [(coin) : 1]
 				result += findCombination(seed, cents - coin.value, coin)
@@ -17,7 +17,7 @@ class CoinCombination {
 		if (!cents) {
 			return [seed]
 		}
-		Coin.upToMax(max).inject([]) {result, coin ->
+		Coin.upToMax(max.value).inject([]) {result, coin ->
 			if (cents >= coin.value) {
 				Map<Coin, Integer> newSeed = seed.clone()
 				newSeed[coin] = newSeed.get(coin, 0) + 1
@@ -25,23 +25,6 @@ class CoinCombination {
 
 			}
 			result
-		}
-	}
-
-	static enum Coin {
-		quarter(25),
-		dime(10),
-		nickel(5),
-		penny(1);
-
-		int value
-
-		Coin(int value) {
-			this.value = value
-		}
-
-		static List<Coin> upToMax(Coin max) {
-			Coin.values().grep{Coin it -> it.value <= max.value}
 		}
 	}
 }

@@ -10,4 +10,11 @@ class CoinCombinationTest {
 
 		println comb.combinations(100)
 	}
+
+	@Test
+	void testJava() {
+		CoinCombinationJava ccj = new CoinCombinationJava();
+
+		println ccj.combinations(100)
+	}
 }

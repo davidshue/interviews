@@ -4,7 +4,7 @@ package grid
  * Created by dshue1 on 8/19/16.
  */
 class GridPathFinder {
-	Integer findNumOfPath(def grid) {
+	Integer findNumOfPath(int[][] grid) {
 		Coordinate start = new Coordinate(x: 0, y:0)
 
 

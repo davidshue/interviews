@@ -10,8 +10,8 @@ class Tree<T> {
 	Node<T> root
 
 	/**
-	 tree representation is a map, with the key as the parent node, and a tuple as its immediate children.
-	 a valid tree can have only one root. A root that has no parent. It should always be the first element of the
+	 tree representation is edges map, with the key as the parent node, and edges tuple as its immediate children.
+	 edges valid tree can have only one root. A root that has no parent. It should always be the first element of the
 	 LinkedHashMap
 	 */
 	Tree(LinkedHashMap<T, Tuple2<T, T>> treeRepresentation){
